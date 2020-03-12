@@ -15,7 +15,7 @@ DROP TABLE IF EXISTS orders;
 
 create table orders (
 order_id int(10) not null auto_increment,
-dt TIMESTAMP not null,
+dt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 surname varchar(512) not null,
 first_name varchar(512) not null,
 second_name varchar(512),
