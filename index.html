@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Анкета абонента</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  </head>
+  <body>
+  <header>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="row justify-content-between align-items-center">
+          <div class="col-lg-3">
+          <img src="./img/logo.png" alt="СПРИНТ">
+          </div>
+          <div class="col-lg-9">
+          <h1><a href="#">Анкета абонента</a></h1>
+          <p>Форма для заключения договора ООО «Спринт инет»</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+  <div class="margin-2"></div> <!-- отступ 2% (стиль настроенный в main.css) -->
+    <div class="container">
+      <div class="row ">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <form  class="needs-validation" id="my_form">
+              <div class="container">
+              <div class="row justify-content-end"> <!-- Прижимаем кнопку к правому краю -->
+                <div class="col-lg-6"> <!-- На малых разрешениях блоки встанут в столбик -->
+                  <div class="card">
+                    <div class="card-header">
+                      Адрес подключения
+                    </div>
+                    <div class="card-body">
+                      <div class="form-row">
+                        <div class="col-6">
+                          <input type="text" class="form-control" id='street' name='f[street]' placeholder="Улица" > 
+                          <div class='error' id="errStreet"></div>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" class="form-control" name='f[house]' placeholder="Дом" >
+                          <div class='error' id="errHouse"></div>
+                        </div>
+                        <div class="col-3">
+                          <input type="text" class="form-control" name='f[room]' placeholder="Квартира">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="margin-2"></div>
+                  <div class="card">
+                    <div class="card-header">
+                      Личные данные
+                    </div>
+                    <div class="card-body">   
+                      <div class="form-row">
+                        <div class="col">
+                          <input type="text" class="form-control" name='f[surname]' placeholder="Фамилия">
+                          <div class='error' id="errSurname"></div>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" name='f[name]' placeholder="Имя" >
+                          <div class='error' id="errName"></div>
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" name='f[second_name]' placeholder="Отчество">
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col">
+                          <input type="tel" class="form-control" name="f[phone]" placeholder="Телефон">
+                          <div class='error' id="errPhone"></div>
+                        </div>
+                        <div class="col">
+                         <input type="email" class="form-control"  name="f[email]" placeholder="Email">
+                         <div class='error' id="errEmail"></div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col">
+                          <select class="custom-select mr-sm-2" name = "f[doc]">
+                            <option selected>Паспорт</option>
+                            <option value="Военный билет">Военный билет</option>
+                            <option value="Паспорт иностранца">Паспорт иностранца</option>
+                          </select>
+                        </div>
+                        <div class="col-2">
+                          <input type="text" class="form-control" placeholder="серия" name="f[ser]">
+                        </div>
+                        <div class="col-3">
+                          <input type="text" class="form-control" placeholder="номер" name="f[num]" >
+                          <div class='error' id="errNum"></div>
+                        </div>
+                        <div class="col-4">
+                          <input type="date" class="form-control" placeholder="дата выдачи" name="f[date]">
+                          <div class='error' id="errDate"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <div class="margin-2"></div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="card">
+                    <div class="card-header">
+                      Услуги
+                    </div>
+                    <div class="card-body">
+                      <div class="form-row">
+                        <div class="col">
+                          <select class="custom-select mr-sm-2" name="f[inet_tariff]">
+                            <option selected>Тариф интернет</option>
+                            <option value="Марафон-50">Марафон-50</option>
+                            <option value="Марафон-80">Марафон-80</option>
+                            <option value="Марафон-100">Марафон-100</option>
+                            <option value="Эстафета-50">Эстафета-50</option>
+                            <option value="Эстафета-70">Эстафета-70</option>
+                            <option value="Эстафета-100">Эстафета-100</option>
+                            <option value="Усадьба-30">Усадьба-30</option>
+                            <option value="Усадьба-50">Усадьба-50</option>
+                            <option value="Усадьба-100">Усадьба-100</option>
+                          </select>
+                        </div>
+                        <div class="col-3">
+                          <div class="form-group">
+                            <input type="number" class="form-control" value="1" min="1" max="100" id="number_comp_Help" name="f[number_comp]">
+                            <small id="number_comp_Help" class="form-text text-muted">Кол-во подключаемых компьютеров</small> <!-- Подсказка привязана к полю ввода по Id -->
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col">
+                          <select class="custom-select mr-sm-2"  name="f[phone_tariff]">
+                            <option selected>Тариф телефонии</option>
+                            <option value="Безлимитный">Безлимитный</option>
+                            <option value="Поминутный">Поминутный</option>
+                          </select>
+                        </div>
+                        <div class="col">
+                          <div class="form-group">
+                            <select class="custom-select mr-sm-2" id="phone_number_Help" name="f[phone_number]">
+                              <option selected>Не выбрано</option>
+                              <option value="8-8617-648521">8-8617-648521</option>
+                              <option value="8-8617-648522">8-8617-648522</option>
+                              <option value="8-8617-648523">8-8617-648523</option>
+                              <option value="8-8617-648524">8-8617-648524</option>
+                              <option value="8-8617-648525">8-8617-648525</option>
+                              <option value="8-8617-648526">8-8617-648526</option>
+                            </select>
+                            <small id="phone_number_Help" class="form-text text-muted">Доступные телефонные номера</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col">
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="on" id="wifiRouter" name="f[wifiRouter]">
+                            <label class="form-check-label" for="wifiRouter">
+                              Wi-Fi Роутер
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="on" id="TVBox" name="f[TVBox]">
+                              <label class="form-check-label" for="TVBox">
+                                ТВ приставка
+                              </label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>   
+                <div class="margin-2"></div>
+                <button type="button" id="send_button" class="btn btn-orange">Сохранить</button>
+              </div>
+              </div>
+              </form>
+              <div style='color: green' id="answer"></div>
+              <button type="button" id="ok_button" class="btn btn-orange">Ok</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="margin-2"></div>
+  </main>
+  <script src="Script.js"></script>
+
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
